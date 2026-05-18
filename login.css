@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+   --color: #111823;
+   --primary-red: #FF4655;
+   --alternative-dark: #0f1923;
+   --off-white-text: #ECE8E1;
+
+   --darker-red: #BD3944;
+   --darkest-red: #53212B;
+}
+
+@font-face {
+   font-family: 'valo';
+   src: url('font/valo.ttf') format('truetype');
+}
+
+
+
+*{
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   min-height: 100vh;
+
+   display: flex;
+   flex-direction: column;
+   background-color: black;
+
+   justify-content: center;
+   align-items: center;
+
+   overflow: hidden;
+}
+
+.container {
+   display: flex;
+   width: 100%;
+   height: 100vh;
+   align-items: stretch;   /* ADD THIS */
+}
+
+.form-box .header{
+   padding: 1.5rem 1rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   
+}
+
+.header .game{
+   font-family: 'valo', sans-serif;
+   color: var(--primary-red);
+   font-size: 1.5rem;
+   text-transform: uppercase ;
+   text-align: left;
+}
+
+.header .sign-in{
+   font-family: "Montserrat", sans-serif;
+   color: var(--off-white-text);
+   font-size: 1.5rem;
+   text-align: right;
+}
+
+.form-box {
+   width: 30%;
+   display: flex;
+   flex-direction: column;
+   background-color: var(--alternative-dark);   
+}
+
+form{
+   width: min(500px, 100%);
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 5rem 1.5rem 1.5rem 2rem;
+ 
+   gap: 20px;
+  
+}
+
+.form-box .logo{
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   padding-bottom: 2rem;
+  
+   align-items: center;
+}
+ 
+span h1{
+   font-family: 'valo', sans-serif;
+   font-size: 2rem;
+  
+   color: var(--darker-red);
+   text-transform: uppercase;
+}
+
+.wrapper{
+   display: flex;
+   width: 100%;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+}
+
+
+
+form label{
+   flex-shrink: 0;
+   height: 30px;
+   width: 30px;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 1rem;
+}
+
+.input-box{
+   width: 80%;
+   display: flex;
+   justify-content: center;
+   padding-bottom: 1rem;
+   align-items: center;
+   gap: 10px;
+}
+
+.input-box input {
+   width: 100%;
+   height: 50px;
+
+   background: rgba(255,255,255,0.1);
+   color: white;
+
+   padding: 0 10px;
+
+   border: 2px solid var(--primary-red);
+   border-radius: 12px;
+
+   font-size: 1rem;
+
+   backdrop-filter: blur(5px);
+
+   transition: 150ms ease;
+}
+
+.input-box input:hover{
+   border-color: #14FFB1;
+}
+
+.input-box input:focus{
+   border-color: #14FFB1;
+   outline: none;
+}
+
+form .butt{
+   display: flex;
+   
+   width: 80%;
+   flex-direction: column;
+   gap: 20px;
+   
+}
+
+.butt .button{
+   display: flex;
+   justify-content: right;
+   align-items: center;
+}
+
+.button button:hover{
+   color: darkblue;
+}
+
+
+.button .sub, .cls{
+   width: 95%;
+   height: 50px;
+   padding: .5rem;
+
+   font-family: 'valo', sans-serif;
+   background: var(--primary-red);
+   color: white;
+
+   border: 4px solid var(--color);
+   border-radius: 12px;
+
+   font-size: 1rem;
+
+   backdrop-filter: blur(10px);
+
+   cursor: pointer; /* ADDED: pointer cursor on hover */
+   transition: transform 100ms ease,   /* moves animates in 0.1sec in ease (start fast, slow down)*/
+               background-color 150ms ease,  /* animate background color in 0.15secs*/
+               box-shadow 150ms ease; /* ADDED: smooth transition */
+   
+   box-shadow: 0 6px 0 var(--darkest-red); /* ADDED: 3D shadow effect */
+}
+
+/* ADDED: button lifts up on hover */
+.button .sub:hover, .cls:hover {
+   background: var(--darker-red);
+   transform: translateY(-2px);
+   box-shadow: 0 8px 0 var(--darkest-red);
+}
+
+/* ADDED: button press down effect on click */
+.button .sub:active, .cls:active {
+   transform: translateY(4px); /* moves down */
+   box-shadow: 0 2px 0 var(--darkest-red); /* shadow shrinks */
+   background: var(--darkest-red); /* darkens on press */
+}
+
+.forget-link{
+   padding: 1rem;
+   display: flex;
+   align-items: center;
+   font-size: 1rem;
+   gap: 10px;
+}
+
+.forget-link p {
+   color: white;
+}
+
+.forget-link a {
+   color:#1877f2;
+   text-decoration: none;
+}
+
+.forget-link a:hover{
+   text-decoration: underline;
+   color: #36D6B3;
+}
+
+form .social-icons{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   width: 60%;
+   gap: 20px;
+}
+
+.social-icons .icons {
+   display: flex;
+   width: 50%;
+   height: 50px;
+}
+
+.icons .google:hover{
+   background-color: #36D6B3;
+}
+
+.icons .facebook:hover{
+   background-color: #36D6B3;
+}
+
+.icons .google{
+   display: flex;
+   width: 100%;
+   height: 100%;
+   border-radius: 10px;
+   justify-content: center;
+   align-items: center;
+   background-color: white;
+
+}
+
+.facebook{
+   display: flex;
+   width: 100%;
+   height: 100%;
+   border-radius: 10px;
+   justify-content: center;
+   align-items: center;
+   background-color: #1877f2;
+
+}
+
+.container .pic {
+   width: 70%;
+   height: 100vh;        
+   background-image: url('images/login-bg.jpg');
+   background-repeat: no-repeat;
+   background-position: 45% center;
+   background-size: cover;
+   align-self:stretch;   
+}
+
+/* ADDED: error message between buttons */
+#errorContainer {
+   width: 95%;
+   text-align: center;
+   font-family: 'Montserrat', sans-serif;
+   font-size: 1rem;
+   color: #FF4655;
+   min-height: 20px; /* keeps layout stable when empty */
+   padding: 0.3rem 0;
+}
